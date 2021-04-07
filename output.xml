@@ -1,0 +1,1993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.5 on win32)" generated="20210407 16:23:43.522" rpa="false">
+<suite id="s1" name="Tc" source="E:\temp\Project0910\tc">
+<suite id="s1-s1" name="空白数据" source="E:\temp\Project0910\tc\空白数据">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>deleteAllTeachers</arg>
+<arg>AND</arg>
+<arg>deleteAllClasses</arg>
+</arguments>
+<kw name="Delete All Teachers" library="pyLib.SchoolTeacherOperation">
+<msg timestamp="20210407 16:23:44.043" level="INFO">{'retcode': 0, 'retlist': []}
+{'retcode': 0, 'retlist': []}
+{'retcode': 0, 'retlist': []}</msg>
+<status status="PASS" starttime="20210407 16:23:43.708" endtime="20210407 16:23:44.043"></status>
+</kw>
+<kw name="Delete All Classes" library="pyLib.SchoolClassOperation">
+<msg timestamp="20210407 16:23:44.343" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '七年级',
+              'id': 502135,
+              'invitecode': '5021356035792',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []}]}
+{ 'gradeid': None,
+  'retcode': 0,
+  'retlist': [ { 'grade__name': '七年级',
+                 'id': 502135,
+                 'invitecode': '5021356035792',
+                 'name': '2班',
+                 'studentlimit': 80,
+                 'studentnumber': 0,
+                 'teacherlist': []}]}
+{'retcode': 0}
+{'gradeid': None, 'retcode': 0, 'retlist': []}</msg>
+<status status="PASS" starttime="20210407 16:23:44.043" endtime="20210407 16:23:44.343"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:43.707" endtime="20210407 16:23:44.344"></status>
+</kw>
+<suite id="s1-s1-s1" name="D 8年级1班和2班" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>addClass</arg>
+<arg>${g_grade8_id}</arg>
+<arg>1班</arg>
+<arg>60</arg>
+<arg>class_8g_1c_id</arg>
+<arg>AND</arg>
+<arg>addClass</arg>
+<arg>${g_grade8_id}</arg>
+<arg>2班</arg>
+<arg>80</arg>
+<arg>class_8g_2c_id</arg>
+</arguments>
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>1班</arg>
+<arg>60</arg>
+<arg>class_8g_1c_id</arg>
+</arguments>
+<msg timestamp="20210407 16:23:44.448" level="INFO">${class_8g_1c_id} = 502152</msg>
+<msg timestamp="20210407 16:23:44.448" level="INFO">{'id': 502152, 'invitecode': '5021524096043', 'retcode': 0}
+before
+global var set: $class_8g_1c_id:502152</msg>
+<status status="PASS" starttime="20210407 16:23:44.362" endtime="20210407 16:23:44.448"></status>
+</kw>
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>2班</arg>
+<arg>80</arg>
+<arg>class_8g_2c_id</arg>
+</arguments>
+<msg timestamp="20210407 16:23:44.640" level="INFO">${class_8g_2c_id} = 502153</msg>
+<msg timestamp="20210407 16:23:44.640" level="INFO">{'id': 502153, 'invitecode': '5021533906806', 'retcode': 0}
+before
+global var set: $class_8g_2c_id:502153</msg>
+<status status="PASS" starttime="20210407 16:23:44.448" endtime="20210407 16:23:44.640"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:44.361" endtime="20210407 16:23:44.641"></status>
+</kw>
+<suite id="s1-s1-s1-s1" name="D 庄子老师" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\d_庄子老师">
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation" type="setup">
+<arguments>
+<arg>zhuangzi</arg>
+<arg>庄子</arg>
+<arg>${g_subject_math_id}</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13691845359</arg>
+<arg>354440717@qq.com</arg>
+<arg>360782199305203518</arg>
+<arg>teacherId</arg>
+</arguments>
+<msg timestamp="20210407 16:23:44.750" level="INFO">${teacherId} = 153619</msg>
+<msg timestamp="20210407 16:23:44.751" level="INFO">'{"retcode": 0, "id": 153619}'
+{'id': 153619, 'retcode': 0}
+before
+global var set: $teacherId:153619</msg>
+<status status="PASS" starttime="20210407 16:23:44.656" endtime="20210407 16:23:44.751"></status>
+</kw>
+<suite id="s1-s1-s1-s1-s1" name="D 诸葛孔明老师" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\d_庄子老师\d_诸葛孔明老师">
+<kw name="Add Student" library="pyLib.SchoolStudentOperation" type="setup">
+<arguments>
+<arg>zhugekongming</arg>
+<arg>诸葛孔明</arg>
+<arg>${g_grade8_id}</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13585215269</arg>
+<arg>studentId</arg>
+</arguments>
+<msg timestamp="20210407 16:23:44.900" level="INFO">${studentId} = 74675</msg>
+<msg timestamp="20210407 16:23:44.900" level="INFO">{'id': 74675, 'retcode': 0}
+before
+global var set: $studentId:74675</msg>
+<status status="PASS" starttime="20210407 16:23:44.800" endtime="20210407 16:23:44.900"></status>
+</kw>
+<suite id="s1-s1-s1-s1-s1-s1" name="学生管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\d_庄子老师\d_诸葛孔明老师\学生管理.robot">
+<test id="s1-s1-s1-s1-s1-s1-t1" name="添加学生1：tc002002">
+<kw name="Add Student" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>wangshufen</arg>
+<arg>王淑芬</arg>
+<arg>2</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13088888888</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.008" level="INFO">{'id': 74676, 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:45.008" level="INFO">${retAdd} = {'retcode': 0, 'id': 74676}</msg>
+<status status="PASS" starttime="20210407 16:23:44.911" endtime="20210407 16:23:45.008"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.010" endtime="20210407 16:23:45.017"></status>
+</kw>
+<kw name="List Students" library="pyLib.SchoolStudentOperation">
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.099" level="INFO">{'retcode': 0,
+ 'retlist': [{'classid': 502152,
+              'id': 74675,
+              'phonenumber': '13585215269',
+              'realname': '诸葛孔明',
+              'username': 'zhugekongming'},
+             {'classid': 502152,
+              'id': 74676,
+              'phonenumber': '13088888888',
+              'realname': '王淑芬',
+              'username': 'wangshufen'}]}</msg>
+<msg timestamp="20210407 16:23:45.099" level="INFO">${retList} = {'retlist': [{'classid': 502152, 'realname': '诸葛孔明', 'username': 'zhugekongming', 'phonenumber': '13585215269', 'id': 74675}, {'classid': 502152, 'realname': '王淑芬', 'username': 'wangshufen', 'phonenum...</msg>
+<status status="PASS" starttime="20210407 16:23:45.019" endtime="20210407 16:23:45.099"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${retlist}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.101" endtime="20210407 16:23:45.105"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$retList["retlist"]</arg>
+</arguments>
+<assign>
+<var>${studentList}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.108" level="INFO">${studentList} = [{'classid': 502152, 'realname': '诸葛孔明', 'username': 'zhugekongming', 'phonenumber': '13585215269', 'id': 74675}, {'classid': 502152, 'realname': '王淑芬', 'username': 'wangshufen', 'phonenumber': '13088...</msg>
+<status status="PASS" starttime="20210407 16:23:45.107" endtime="20210407 16:23:45.108"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${studentList}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.117" endtime="20210407 16:23:45.120"></status>
+</kw>
+<kw name="Student List Should Contain" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>${studentList}</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>wangshufen</arg>
+<arg>王淑芬</arg>
+<arg>13088888888</arg>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:45.126" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.131" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:45.132" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:45.132" level="INFO">{'classid': 502152,
+ 'id': 74676,
+ 'phonenumber': '13088888888',
+ 'realname': '王淑芬',
+ 'username': 'wangshufen'}</msg>
+<status status="PASS" starttime="20210407 16:23:45.125" endtime="20210407 16:23:45.132"></status>
+</kw>
+<kw name="Delete Student" library="pyLib.SchoolStudentOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:45.140" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.252" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.140" endtime="20210407 16:23:45.252"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:44.909" endtime="20210407 16:23:45.253" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t2" name="删除学生1：tc002081">
+<kw name="List Students" library="pyLib.SchoolStudentOperation">
+<assign>
+<var>${listBeforeDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.334" level="INFO">{'retcode': 0,
+ 'retlist': [{'classid': 502152,
+              'id': 74675,
+              'phonenumber': '13585215269',
+              'realname': '诸葛孔明',
+              'username': 'zhugekongming'}]}</msg>
+<msg timestamp="20210407 16:23:45.334" level="INFO">${listBeforeDelete} = {'retlist': [{'classid': 502152, 'realname': '诸葛孔明', 'username': 'zhugekongming', 'phonenumber': '13585215269', 'id': 74675}], 'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.266" endtime="20210407 16:23:45.334"></status>
+</kw>
+<kw name="Add Student" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>wangshufen</arg>
+<arg>王淑芬</arg>
+<arg>2</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13088888888</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.461" level="INFO">{'id': 74677, 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:45.461" level="INFO">${retAdd} = {'retcode': 0, 'id': 74677}</msg>
+<status status="PASS" starttime="20210407 16:23:45.336" endtime="20210407 16:23:45.461"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.462" endtime="20210407 16:23:45.463"></status>
+</kw>
+<kw name="Delete Student" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<assign>
+<var>${retDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.464" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.570" level="INFO">{'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:45.570" level="INFO">${retDelete} = {'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.464" endtime="20210407 16:23:45.570"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retDelete["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.571" endtime="20210407 16:23:45.572"></status>
+</kw>
+<kw name="List Students" library="pyLib.SchoolStudentOperation">
+<assign>
+<var>${listAfterDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.642" level="INFO">{'retcode': 0,
+ 'retlist': [{'classid': 502152,
+              'id': 74675,
+              'phonenumber': '13585215269',
+              'realname': '诸葛孔明',
+              'username': 'zhugekongming'}]}</msg>
+<msg timestamp="20210407 16:23:45.642" level="INFO">${listAfterDelete} = {'retlist': [{'classid': 502152, 'realname': '诸葛孔明', 'username': 'zhugekongming', 'phonenumber': '13585215269', 'id': 74675}], 'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.573" endtime="20210407 16:23:45.642"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$listBeforeDelete==$listAfterDelete</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.644" endtime="20210407 16:23:45.644"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:45.261" endtime="20210407 16:23:45.647" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 16:23:44.900" endtime="20210407 16:23:45.655"></status>
+</suite>
+<kw name="Delete Student" library="pyLib.SchoolStudentOperation" type="teardown">
+<arguments>
+<arg>${studentId}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:45.774" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.670" endtime="20210407 16:23:45.775"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:44.751" endtime="20210407 16:23:45.775"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s2" name="学生管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\d_庄子老师\学生管理.robot">
+<test id="s1-s1-s1-s1-s2-t1" name="添加学生1：tc002001">
+<kw name="Add Student" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>wangshufen</arg>
+<arg>王淑芬</arg>
+<arg>2</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13585215269</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.895" level="INFO">{'id': 74678, 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:45.895" level="INFO">${retAdd} = {'retcode': 0, 'id': 74678}</msg>
+<status status="PASS" starttime="20210407 16:23:45.801" endtime="20210407 16:23:45.895"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.896" endtime="20210407 16:23:45.897"></status>
+</kw>
+<kw name="List Students" library="pyLib.SchoolStudentOperation">
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.969" level="INFO">{'retcode': 0,
+ 'retlist': [{'classid': 502152,
+              'id': 74678,
+              'phonenumber': '13585215269',
+              'realname': '王淑芬',
+              'username': 'wangshufen'}]}</msg>
+<msg timestamp="20210407 16:23:45.969" level="INFO">${retList} = {'retlist': [{'classid': 502152, 'realname': '王淑芬', 'username': 'wangshufen', 'phonenumber': '13585215269', 'id': 74678}], 'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:45.898" endtime="20210407 16:23:45.969"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${retlist}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.970" endtime="20210407 16:23:45.975"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$retList["retlist"]</arg>
+</arguments>
+<assign>
+<var>${studentList}</var>
+</assign>
+<msg timestamp="20210407 16:23:45.977" level="INFO">${studentList} = [{'classid': 502152, 'realname': '王淑芬', 'username': 'wangshufen', 'phonenumber': '13585215269', 'id': 74678}]</msg>
+<status status="PASS" starttime="20210407 16:23:45.976" endtime="20210407 16:23:45.977"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${studentList}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:45.981" endtime="20210407 16:23:45.984"></status>
+</kw>
+<kw name="Student List Should Contain" library="pyLib.SchoolStudentOperation">
+<arguments>
+<arg>${studentList}</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>wangshufen</arg>
+<arg>王淑芬</arg>
+<arg>13585215269</arg>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:45.987" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.992" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:45.993" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:45.993" level="INFO">{'classid': 502152,
+ 'id': 74678,
+ 'phonenumber': '13585215269',
+ 'realname': '王淑芬',
+ 'username': 'wangshufen'}</msg>
+<status status="PASS" starttime="20210407 16:23:45.987" endtime="20210407 16:23:45.993"></status>
+</kw>
+<kw name="Delete Student" library="pyLib.SchoolStudentOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:46.006" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:46.115" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:46.005" endtime="20210407 16:23:46.115"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:45.800" endtime="20210407 16:23:46.116" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 16:23:45.788" endtime="20210407 16:23:46.124"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s3" name="老师管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\d_庄子老师\老师管理.robot">
+<test id="s1-s1-s1-s1-s3-t1" name="添加老师2:tc001002">
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>kongziiii</arg>
+<arg>孔子</arg>
+<arg>${g_subject_science_id}</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>13564854529</arg>
+<arg>488362431@qq.com</arg>
+<arg>36078219952183527</arg>
+<arg>teacher_kongzi_Id</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.267" level="INFO">${teacher_kongzi_Id} = 153620</msg>
+<msg timestamp="20210407 16:23:46.267" level="INFO">'{"retcode": 0, "id": 153620}'
+{'id': 153620, 'retcode': 0}
+before
+global var set: $teacher_kongzi_Id:153620</msg>
+<msg timestamp="20210407 16:23:46.267" level="INFO">${retAdd} = {'retcode': 0, 'id': 153620}</msg>
+<status status="PASS" starttime="20210407 16:23:46.165" endtime="20210407 16:23:46.267"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"] == 0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.268" endtime="20210407 16:23:46.269"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.336" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'},
+             {'email': '488362431@qq.com',
+              'id': 153620,
+              'idcardnumber': '36078219952183527',
+              'phonenumber': '13564854529',
+              'realname': '孔子',
+              'teachclasslist': [502152, 502153],
+              'username': 'kongziiii'}]}</msg>
+<msg timestamp="20210407 16:23:46.336" level="INFO">${ret} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}, {'us...</msg>
+<status status="PASS" starttime="20210407 16:23:46.270" endtime="20210407 16:23:46.336"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.339" level="INFO">${retList} = [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}, {'username': 'ko...</msg>
+<status status="PASS" starttime="20210407 16:23:46.338" endtime="20210407 16:23:46.339"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${retList}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.340" endtime="20210407 16:23:46.344"></status>
+</kw>
+<kw name="Teacher List Should Contain" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>${retList}</arg>
+<arg>kongziiii</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>孔子</arg>
+<arg>&amp;{retAdd}[id]</arg>
+<arg>13564854529</arg>
+<arg>488362431@qq.com</arg>
+<arg>36078219952183527</arg>
+</arguments>
+<msg timestamp="20210407 16:23:46.348" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:46.354" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:46.354" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:46.355" level="INFO">[502152]
+[502152, 502153]
+{'email': '488362431@qq.com',
+ 'id': 153620,
+ 'idcardnumber': '36078219952183527',
+ 'phonenumber': '13564854529',
+ 'realname': '孔子',
+ 'teachclasslist': [502152, 502153],
+ 'username': 'kongziiii'}</msg>
+<status status="PASS" starttime="20210407 16:23:46.348" endtime="20210407 16:23:46.355"></status>
+</kw>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation" type="teardown">
+<arguments>
+<arg>${teacher_kongzi_Id}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:46.473" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:46.362" endtime="20210407 16:23:46.474"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:46.157" endtime="20210407 16:23:46.475" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-s3-t2" name="添加老师3:tc001003">
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retListTeacherBefore}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.563" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:46.563" level="INFO">${retListTeacherBefore} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:46.488" endtime="20210407 16:23:46.563"></status>
+</kw>
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>zhuangzi</arg>
+<arg>同名庄子</arg>
+<arg>${g_subject_science_id}</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>13559421526</arg>
+<arg>1127668247@qq.com</arg>
+<arg>360782199602183527</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.663" level="INFO">('{"reason": "\\u767b\\u5f55\\u540d zhuangzi \\u5df2\\u7ecf\\u5b58\\u5728", '
+ '"retcode": 1}')
+{'reason': '登录名 zhuangzi 已经存在', 'retcode': 1}</msg>
+<msg timestamp="20210407 16:23:46.663" level="INFO">${retAdd} = {'reason': '登录名 zhuangzi 已经存在', 'retcode': 1}</msg>
+<status status="PASS" starttime="20210407 16:23:46.564" endtime="20210407 16:23:46.664"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==1</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.665" endtime="20210407 16:23:46.665"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["reason"]=="登录名 zhuangzi 已经存在"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.667" endtime="20210407 16:23:46.667"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retListTeacherAfter}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.763" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:46.763" level="INFO">${retListTeacherAfter} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:46.668" endtime="20210407 16:23:46.763"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retListTeacherBefore==$retListTeacherAfter</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.765" endtime="20210407 16:23:46.765"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:46.482" endtime="20210407 16:23:46.767" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-s3-t3" name="修改老师1：tc001051">
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retBeforeModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.862" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:46.863" level="INFO">${retBeforeModify} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:46.778" endtime="20210407 16:23:46.863"></status>
+</kw>
+<kw name="Modify Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>88888888</arg>
+<arg>真实姓名</arg>
+<arg>${g_subject_science_id}</arg>
+<arg>49132 49133 49134 49135</arg>
+<arg>电话号码</arg>
+<arg>邮箱地址</arg>
+<arg>身份证号</arg>
+</arguments>
+<assign>
+<var>${retModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:46.961" level="INFO">[{'id': 49132}]
+[{'id': 49132}, {'id': 49133}]
+[{'id': 49132}, {'id': 49133}, {'id': 49134}]
+[{'id': 49132}, {'id': 49133}, {'id': 49134}, {'id': 49135}]
+{"reason": "id \u4e3a`88888888`\u7684\u8001\u5e08\u4e0d\u5b58\u5728", "retcode": 1}
+{'reason': 'id 为`88888888`的老师不存在', 'retcode': 1}</msg>
+<msg timestamp="20210407 16:23:46.961" level="INFO">${retModify} = {'reason': 'id 为`88888888`的老师不存在', 'retcode': 1}</msg>
+<status status="PASS" starttime="20210407 16:23:46.865" endtime="20210407 16:23:46.962"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["retcode"]==1</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.963" endtime="20210407 16:23:46.964"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["reason"]=="id 为`88888888`的老师不存在"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:46.965" endtime="20210407 16:23:46.966"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retafterModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.060" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:47.060" level="INFO">${retafterModify} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:46.967" endtime="20210407 16:23:47.060"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${retBeforeModify}</arg>
+<arg>${retafterModify}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.062" endtime="20210407 16:23:47.062"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:46.774" endtime="20210407 16:23:47.064" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-s3-t4" name="修改老师2：tc001052">
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>kongzi888666</arg>
+<arg>孔子</arg>
+<arg>${g_subject_science_id}</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>13564854529</arg>
+<arg>488362431@qq.com</arg>
+<arg>36078219952183527</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.190" level="INFO">'{"retcode": 0, "id": 153621}'
+{'id': 153621, 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:47.190" level="INFO">${retAdd} = {'retcode': 0, 'id': 153621}</msg>
+<status status="PASS" starttime="20210407 16:23:47.075" endtime="20210407 16:23:47.190"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.192" endtime="20210407 16:23:47.192"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:47.194" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<status status="PASS" starttime="20210407 16:23:47.193" endtime="20210407 16:23:47.198"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${temp}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.269" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'},
+             {'email': '488362431@qq.com',
+              'id': 153621,
+              'idcardnumber': '36078219952183527',
+              'phonenumber': '13564854529',
+              'realname': '孔子',
+              'teachclasslist': [502152],
+              'username': 'kongzi888666'}]}</msg>
+<msg timestamp="20210407 16:23:47.269" level="INFO">${temp} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}, {'us...</msg>
+<status status="PASS" starttime="20210407 16:23:47.204" endtime="20210407 16:23:47.269"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${temp}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.270" endtime="20210407 16:23:47.274"></status>
+</kw>
+<kw name="Modify Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+<arg>newName=孔子000000</arg>
+<arg>newSubjectId=${g_subject_math_id}</arg>
+<arg>newClassList=${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>newPhoneNumber=13564854529</arg>
+<arg>newEmail=488362431@qq.com</arg>
+<arg>newIdcardNumber=36078219952183527</arg>
+</arguments>
+<assign>
+<var>${retModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.276" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:47.381" level="INFO">[{'id': 502152}]
+[{'id': 502152}, {'id': 502153}]
+{"reason": "(1062, \"Duplicate entry '502152-1' for key 'school_class_id'\")", "retcode": 1}
+{'reason': '(1062, "Duplicate entry \'502152-1\' for key \'school_class_id\'")',
+ 'retcode': 1}</msg>
+<msg timestamp="20210407 16:23:47.381" level="INFO">${retModify} = {'reason': '(1062, "Duplicate entry \'502152-1\' for key \'school_class_id\'")', 'retcode': 1}</msg>
+<status status="PASS" starttime="20210407 16:23:47.275" endtime="20210407 16:23:47.381"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${retModify}</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.382" endtime="20210407 16:23:47.385"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["retcode"]==0</arg>
+</arguments>
+<msg timestamp="20210407 16:23:47.387" level="FAIL">'$retModify["retcode"]==0' should be true.</msg>
+<status status="FAIL" starttime="20210407 16:23:47.387" endtime="20210407 16:23:47.388"></status>
+</kw>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:47.390" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:47.509" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:47.389" endtime="20210407 16:23:47.510"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:47.071" endtime="20210407 16:23:47.511" critical="yes">'$retModify["retcode"]==0' should be true.</status>
+</test>
+<test id="s1-s1-s1-s1-s3-t5" name="删除老师1:tc001081">
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retTeacherListBeforeDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.592" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:47.592" level="INFO">${retTeacherListBeforeDelete} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:47.526" endtime="20210407 16:23:47.592"></status>
+</kw>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>88888888</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.695" level="INFO">{'reason': 'id 为`88888888`的老师不存在', 'retcode': 404}</msg>
+<msg timestamp="20210407 16:23:47.695" level="INFO">${ret} = {'reason': 'id 为`88888888`的老师不存在', 'retcode': 404}</msg>
+<status status="PASS" starttime="20210407 16:23:47.594" endtime="20210407 16:23:47.695"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$ret["retcode"]==404</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.696" endtime="20210407 16:23:47.697"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$ret["reason"]=="id 为`88888888`的老师不存在"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.699" endtime="20210407 16:23:47.700"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${retTeacherListAfterDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.792" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:47.793" level="INFO">${retTeacherListAfterDelete} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:47.701" endtime="20210407 16:23:47.793"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retTeacherListBeforeDelete==$retTeacherListAfterDelete</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.794" endtime="20210407 16:23:47.794"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:47.521" endtime="20210407 16:23:47.796" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s1-s3-t6" name="删除老师2:tc001082">
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>fordelete</arg>
+<arg>用来删除的</arg>
+<arg>5</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>15201326215</arg>
+<arg>5214216359@qq.com</arg>
+<arg>360782199102183527</arg>
+<arg>teacher_fordelete_Id</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:47.926" level="INFO">${teacher_fordelete_Id} = 153622</msg>
+<msg timestamp="20210407 16:23:47.926" level="INFO">'{"retcode": 0, "id": 153622}'
+{'id': 153622, 'retcode': 0}
+before
+global var set: $teacher_fordelete_Id:153622</msg>
+<msg timestamp="20210407 16:23:47.926" level="INFO">${retAdd} = {'retcode': 0, 'id': 153622}</msg>
+<status status="PASS" starttime="20210407 16:23:47.807" endtime="20210407 16:23:47.926"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"] == 0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:47.927" endtime="20210407 16:23:47.928"></status>
+</kw>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>${teacher_fordelete_Id}</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.032" level="INFO">{'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:48.033" level="INFO">${ret} = {'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:47.929" endtime="20210407 16:23:48.033"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$ret["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:48.034" endtime="20210407 16:23:48.034"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.107" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153619,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '庄子',
+              'teachclasslist': [502152],
+              'username': 'zhuangzi'}]}</msg>
+<msg timestamp="20210407 16:23:48.107" level="INFO">${ret} = {'retlist': [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}], 're...</msg>
+<status status="PASS" starttime="20210407 16:23:48.035" endtime="20210407 16:23:48.107"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.109" level="INFO">${retList} = [{'username': 'zhuangzi', 'teachclasslist': [502152], 'realname': '庄子', 'id': 153619, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}]</msg>
+<status status="PASS" starttime="20210407 16:23:48.108" endtime="20210407 16:23:48.109"></status>
+</kw>
+<kw name="Teacher List Should Contain" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>${retList}</arg>
+<arg>fordelete</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>用来删除的</arg>
+<arg>&amp;{retAdd}[id]</arg>
+<arg>15201326215</arg>
+<arg>5214216359@qq.com</arg>
+<arg>360782199102183527</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.111" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.115" level="INFO">occur 0 times</msg>
+<msg timestamp="20210407 16:23:48.115" level="INFO">occur 0 times</msg>
+<msg timestamp="20210407 16:23:48.115" level="INFO">[502152]
+[502152, 502153]
+{'email': '5214216359@qq.com',
+ 'id': 153622,
+ 'idcardnumber': '360782199102183527',
+ 'phonenumber': '15201326215',
+ 'realname': '用来删除的',
+ 'teachclasslist': [502152, 502153],
+ 'username': 'fordelete'}</msg>
+<status status="PASS" starttime="20210407 16:23:48.110" endtime="20210407 16:23:48.115"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:47.802" endtime="20210407 16:23:48.123" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20210407 16:23:46.140" endtime="20210407 16:23:48.131"></status>
+</suite>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation" type="teardown">
+<arguments>
+<arg>${teacherId}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.254" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:48.150" endtime="20210407 16:23:48.255"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:44.641" endtime="20210407 16:23:48.255"></status>
+</suite>
+<suite id="s1-s1-s1-s2" name="班级管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\班级管理.robot">
+<test id="s1-s1-s1-s2-t1" name="添加班级2:tc000002">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>3班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.356" level="INFO">{'id': 502154, 'invitecode': '5021542649342', 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:48.356" level="INFO">${retAdd} = {'invitecode': '5021542649342', 'retcode': 0, 'id': 502154}</msg>
+<status status="PASS" starttime="20210407 16:23:48.284" endtime="20210407 16:23:48.356"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd['retcode']==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:48.358" endtime="20210407 16:23:48.358"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.460" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502152,
+              'invitecode': '5021524096043',
+              'name': '1班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502153,
+              'invitecode': '5021533906806',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502154,
+              'invitecode': '5021542649342',
+              'name': '3班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:48.460" level="INFO">${ret} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20210407 16:23:48.360" endtime="20210407 16:23:48.460"></status>
+</kw>
+<kw name="Class List Should Contain" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>&amp;{ret}[retlist]</arg>
+<arg>3班</arg>
+<arg>八年级</arg>
+<arg>&amp;{retAdd}[invitecode]</arg>
+<arg>80</arg>
+<arg>0</arg>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.465" level="WARN">Accessing variable items using '&amp;{ret}[retlist]' syntax is deprecated. Use '${ret}[retlist]' instead.</msg>
+<msg timestamp="20210407 16:23:48.476" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:48.483" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.490" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:48.490" level="INFO">occur 1 times</msg>
+<status status="PASS" starttime="20210407 16:23:48.463" endtime="20210407 16:23:48.491"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.492" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.585" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:48.492" endtime="20210407 16:23:48.586"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:48.282" endtime="20210407 16:23:48.587" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s2-t2" name="添加班级3:tc000003">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>1班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.680" level="INFO">{'reason': 'Traceback (most recent call last):\n'
+           '  File '
+           '"/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", '
+           'line 542, in addClass\n'
+           '    school_class = '
+           'self._addClass(name,schoolid,gradeid,studentlimit)\n'
+           '  File '
+           '"/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", '
+           'line 531, in _addClass\n'
+           '    school_class.save()\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 710, in save\n'
+           '    force_update=force_update, update_fields=update_fields)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 738, in save_base\n'
+           '    updated = self._save_table(raw, cls, force_insert, '
+           'force_update, using, update_fields)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 822, in _save_table\n'
+           '    result = self._do_insert(cls._base_manager, using, fields, '
+           'update_pk, raw)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 861, in _do_insert\n'
+           '    using=using, raw=raw)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", '
+           'line 127, in manager_method\n'
+           '    return getattr(self.get_queryset(), name)(*args, **kwargs)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/query.py", '
+           'line 920, in _insert\n'
+           '    return query.get_compiler(using=using).execute_sql(return_id)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", '
+           'line 974, in execute_sql\n'
+           '    cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+           'line 64, in execute\n'
+           '    return self.cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/utils.py", line '
+           '97, in __exit__\n'
+           '    six.reraise(dj_exc_type, dj_exc_value, traceback)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+           'line 64, in execute\n'
+           '    return self.cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", '
+           'line 124, in execute\n'
+           '    return self.cursor.execute(query, args)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line '
+           '205, in execute\n'
+           '    self.errorhandler(self, exc, value)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", '
+           'line 36, in defaulterrorhandler\n'
+           '    raise errorclass, errorvalue\n'
+           'IntegrityError: (1062, "Duplicate entry \'1\\xe7\\x8f\\xad-113-2\' '
+           'for key \'name\'")\n',
+ 'retcode': 1}</msg>
+<msg timestamp="20210407 16:23:48.680" level="INFO">${retAdd} = {'reason': 'Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass\n    school_class = self._addClass(name,schoo...</msg>
+<status status="PASS" starttime="20210407 16:23:48.597" endtime="20210407 16:23:48.680"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>&amp;{retAdd}[retcode]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.683" level="WARN">Accessing variable items using '&amp;{retAdd}[retcode]' syntax is deprecated. Use '${retAdd}[retcode]' instead.</msg>
+<msg timestamp="20210407 16:23:48.688" level="INFO">1</msg>
+<status status="PASS" starttime="20210407 16:23:48.682" endtime="20210407 16:23:48.688"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"]==1</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:48.695" endtime="20210407 16:23:48.696"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>&amp;{retAdd}[reason]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.698" level="WARN">Accessing variable items using '&amp;{retAdd}[reason]' syntax is deprecated. Use '${retAdd}[reason]' instead.</msg>
+<msg timestamp="20210407 16:23:48.713" level="INFO">Traceback (most recent call last):
+  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass
+    school_class = self._addClass(name,schoolid,gradeid,studentlimit)
+  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 531, in _addClass
+    school_class.save()
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (1062, "Duplicate entry '1\xe7\x8f\xad-113-2' for key 'name'")
+</msg>
+<status status="PASS" starttime="20210407 16:23:48.697" endtime="20210407 16:23:48.714"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["reason"]=="duplicated class name"</arg>
+</arguments>
+<msg timestamp="20210407 16:23:48.716" level="FAIL">'$retAdd["reason"]=="duplicated class name"' should be true.</msg>
+<status status="FAIL" starttime="20210407 16:23:48.715" endtime="20210407 16:23:48.716"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:48.595" endtime="20210407 16:23:48.717" critical="yes">'$retAdd["reason"]=="duplicated class name"' should be true.</status>
+</test>
+<test id="s1-s1-s1-s2-t3" name="修改班级1：tc000051">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>3班</arg>
+<arg>80</arg>
+<arg>needModifyClassId</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.811" level="INFO">${needModifyClassId} = 502156</msg>
+<msg timestamp="20210407 16:23:48.811" level="INFO">{'id': 502156, 'invitecode': '5021565812298', 'retcode': 0}
+before
+global var set: $needModifyClassId:502156</msg>
+<msg timestamp="20210407 16:23:48.811" level="INFO">${retAdd} = {'invitecode': '5021565812298', 'retcode': 0, 'id': 502156}</msg>
+<status status="PASS" starttime="20210407 16:23:48.734" endtime="20210407 16:23:48.811"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd['retcode']==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:48.812" endtime="20210407 16:23:48.813"></status>
+</kw>
+<kw name="Modify Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${needModifyClassId}</arg>
+<arg>xin二班</arg>
+<arg>60</arg>
+</arguments>
+<assign>
+<var>${retModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:48.906" level="INFO">{'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:48.906" level="INFO">${retModify} = {'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:48.814" endtime="20210407 16:23:48.906"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:48.907" endtime="20210407 16:23:48.908"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.010" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502152,
+              'invitecode': '5021524096043',
+              'name': '1班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502153,
+              'invitecode': '5021533906806',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502156,
+              'invitecode': '5021565812298',
+              'name': 'xin二班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:49.011" level="INFO">${ret} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20210407 16:23:48.909" endtime="20210407 16:23:49.011"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.013" level="INFO">${retList} = [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name': '八年级', 'invitecode': '50215...</msg>
+<status status="PASS" starttime="20210407 16:23:49.012" endtime="20210407 16:23:49.013"></status>
+</kw>
+<kw name="Class List Should Contain" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${retList}</arg>
+<arg>xin二班</arg>
+<arg>八年级</arg>
+<arg>&amp;{retAdd}[invitecode]</arg>
+<arg>60</arg>
+<arg>0</arg>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.015" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.019" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.024" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:49.024" level="INFO">occur 1 times</msg>
+<status status="PASS" starttime="20210407 16:23:49.014" endtime="20210407 16:23:49.024"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.026" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.109" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:49.026" endtime="20210407 16:23:49.109"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:48.729" endtime="20210407 16:23:49.111" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-s2-t4" name="修改班级2：tc000052">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>3班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.211" level="INFO">{'id': 502157, 'invitecode': '5021572385785', 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:49.211" level="INFO">${retAdd} = {'invitecode': '5021572385785', 'retcode': 0, 'id': 502157}</msg>
+<status status="PASS" starttime="20210407 16:23:49.123" endtime="20210407 16:23:49.211"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd['retcode']==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:49.214" endtime="20210407 16:23:49.215"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$retAdd["id"]</arg>
+</arguments>
+<assign>
+<var>${classId}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.217" level="INFO">${classId} = 502157</msg>
+<status status="PASS" starttime="20210407 16:23:49.216" endtime="20210407 16:23:49.217"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<assign>
+<var>${modifyBefore}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.309" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502152,
+              'invitecode': '5021524096043',
+              'name': '1班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502153,
+              'invitecode': '5021533906806',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502157,
+              'invitecode': '5021572385785',
+              'name': '3班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:49.309" level="INFO">${modifyBefore} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20210407 16:23:49.219" endtime="20210407 16:23:49.309"></status>
+</kw>
+<kw name="Modify Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${classId}</arg>
+<arg>1班</arg>
+<arg>80</arg>
+</arguments>
+<assign>
+<var>${retModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.408" level="INFO">{'reason': '未知错误:Traceback (most recent call last):\n'
+           '  File '
+           '"/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", '
+           'line 612, in modifyClass\n'
+           '    school_class.save()\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 710, in save\n'
+           '    force_update=force_update, update_fields=update_fields)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 738, in save_base\n'
+           '    updated = self._save_table(raw, cls, force_insert, '
+           'force_update, using, update_fields)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 803, in _save_table\n'
+           '    forced_update)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/base.py", '
+           'line 853, in _do_update\n'
+           '    return filtered._update(values) &gt; 0\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/query.py", '
+           'line 580, in _update\n'
+           '    return query.get_compiler(self.db).execute_sql(CURSOR)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", '
+           'line 1062, in execute_sql\n'
+           '    cursor = super(SQLUpdateCompiler, '
+           'self).execute_sql(result_type)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", '
+           'line 840, in execute_sql\n'
+           '    cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+           'line 64, in execute\n'
+           '    return self.cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/utils.py", line '
+           '97, in __exit__\n'
+           '    six.reraise(dj_exc_type, dj_exc_value, traceback)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", '
+           'line 64, in execute\n'
+           '    return self.cursor.execute(sql, params)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", '
+           'line 124, in execute\n'
+           '    return self.cursor.execute(query, args)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line '
+           '205, in execute\n'
+           '    self.errorhandler(self, exc, value)\n'
+           '  File '
+           '"/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", '
+           'line 36, in defaulterrorhandler\n'
+           '    raise errorclass, errorvalue\n'
+           'IntegrityError: (1062, "Duplicate entry \'1\\xe7\\x8f\\xad-113-2\' '
+           'for key \'name\'")\n',
+ 'retcode': 10000}</msg>
+<msg timestamp="20210407 16:23:49.409" level="INFO">${retModify} = {'reason': '未知错误:Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 612, in modifyClass\n    school_class.save()\n  File "/us...</msg>
+<status status="PASS" starttime="20210407 16:23:49.311" endtime="20210407 16:23:49.409"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>&amp;{retModify}[retcode]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.411" level="WARN">Accessing variable items using '&amp;{retModify}[retcode]' syntax is deprecated. Use '${retModify}[retcode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.417" level="INFO">10000</msg>
+<status status="PASS" starttime="20210407 16:23:49.410" endtime="20210407 16:23:49.417"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["retcode"]==1</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.423" level="FAIL">'$retModify["retcode"]==1' should be true.</msg>
+<status status="FAIL" starttime="20210407 16:23:49.422" endtime="20210407 16:23:49.423"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation" type="teardown">
+<arguments>
+<arg>${classId}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.514" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:49.425" endtime="20210407 16:23:49.514"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:49.118" endtime="20210407 16:23:49.515" critical="yes">'$retModify["retcode"]==1' should be true.</status>
+</test>
+<test id="s1-s1-s1-s2-t5" name="删除班级2：tc000082">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>3班</arg>
+<arg>80</arg>
+<arg>class_8g3c_id</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.611" level="INFO">${class_8g3c_id} = 502158</msg>
+<msg timestamp="20210407 16:23:49.611" level="INFO">{'id': 502158, 'invitecode': '5021587188404', 'retcode': 0}
+before
+global var set: $class_8g3c_id:502158</msg>
+<msg timestamp="20210407 16:23:49.611" level="INFO">${retAdd} = {'invitecode': '5021587188404', 'retcode': 0, 'id': 502158}</msg>
+<status status="PASS" starttime="20210407 16:23:49.527" endtime="20210407 16:23:49.611"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd['retcode']==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:49.613" endtime="20210407 16:23:49.615"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.712" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502152,
+              'invitecode': '5021524096043',
+              'name': '1班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502153,
+              'invitecode': '5021533906806',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502158,
+              'invitecode': '5021587188404',
+              'name': '3班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:49.712" level="INFO">${ret} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20210407 16:23:49.620" endtime="20210407 16:23:49.712"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.714" level="INFO">${retList} = [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name': '八年级', 'invitecode': '50215...</msg>
+<status status="PASS" starttime="20210407 16:23:49.714" endtime="20210407 16:23:49.715"></status>
+</kw>
+<kw name="Class List Should Contain" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${retList}</arg>
+<arg>3班</arg>
+<arg>八年级</arg>
+<arg>&amp;{retAdd}[invitecode]</arg>
+<arg>80</arg>
+<arg>0</arg>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.717" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.720" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.725" level="INFO">occur 1 times</msg>
+<msg timestamp="20210407 16:23:49.725" level="INFO">occur 1 times</msg>
+<status status="PASS" starttime="20210407 16:23:49.716" endtime="20210407 16:23:49.725"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${class_8g3c_id}</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.815" level="INFO">{'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:49.815" level="INFO">${ret} = {'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:49.729" endtime="20210407 16:23:49.815"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$ret["retcode"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:49.816" endtime="20210407 16:23:49.817"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.909" level="INFO">{'gradeid': None,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502152,
+              'invitecode': '5021524096043',
+              'name': '1班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []},
+             {'grade__name': '八年级',
+              'id': 502153,
+              'invitecode': '5021533906806',
+              'name': '2班',
+              'studentlimit': 80,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:49.909" level="INFO">${ret} = {'gradeid': None, 'retlist': [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name'...</msg>
+<status status="PASS" starttime="20210407 16:23:49.819" endtime="20210407 16:23:49.909"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:49.911" level="INFO">${retList} = [{'name': '1班', 'grade__name': '八年级', 'invitecode': '5021524096043', 'studentlimit': 60, 'studentnumber': 0, 'id': 502152, 'teacherlist': []}, {'name': '2班', 'grade__name': '八年级', 'invitecode': '50215...</msg>
+<status status="PASS" starttime="20210407 16:23:49.911" endtime="20210407 16:23:49.911"></status>
+</kw>
+<kw name="Class List Should Contain" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${retList}</arg>
+<arg>3班</arg>
+<arg>八年级</arg>
+<arg>&amp;{retAdd}[invitecode]</arg>
+<arg>80</arg>
+<arg>0</arg>
+<arg>&amp;{retAdd}[id]</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20210407 16:23:49.914" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.920" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.925" level="INFO">occur 0 times</msg>
+<msg timestamp="20210407 16:23:49.925" level="INFO">occur 0 times</msg>
+<status status="PASS" starttime="20210407 16:23:49.913" endtime="20210407 16:23:49.925"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:49.520" endtime="20210407 16:23:49.927" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20210407 16:23:48.270" endtime="20210407 16:23:49.940"></status>
+</suite>
+<suite id="s1-s1-s1-s3" name="老师管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\老师管理">
+<suite id="s1-s1-s1-s3-s1" name="老师管理" source="E:\temp\Project0910\tc\空白数据\d_8年级1班和2班\老师管理\老师管理.robot">
+<test id="s1-s1-s1-s3-s1-t1" name="添加老师1:tc001001">
+<kw name="Add Teacher" library="pyLib.SchoolTeacherOperation">
+<arguments>
+<arg>chenjinfeng</arg>
+<arg>陈锦峰</arg>
+<arg>${g_subject_math_id}</arg>
+<arg>${class_8g_1c_id} ${class_8g_2c_id}</arg>
+<arg>13691845359</arg>
+<arg>354440717@qq.com</arg>
+<arg>360782199305203518</arg>
+<arg>teacherId</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.088" level="INFO">${teacherId} = 153623</msg>
+<msg timestamp="20210407 16:23:50.088" level="INFO">'{"retcode": 0, "id": 153623}'
+{'id': 153623, 'retcode': 0}
+before
+global var set: $teacherId:153623</msg>
+<msg timestamp="20210407 16:23:50.088" level="INFO">${retAdd} = {'retcode': 0, 'id': 153623}</msg>
+<status status="PASS" starttime="20210407 16:23:49.986" endtime="20210407 16:23:50.088"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd["retcode"] == 0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.089" endtime="20210407 16:23:50.090"></status>
+</kw>
+<kw name="List Teachers" library="pyLib.SchoolTeacherOperation">
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.161" level="INFO">{'retcode': 0,
+ 'retlist': [{'email': '354440717@qq.com',
+              'id': 153623,
+              'idcardnumber': '360782199305203518',
+              'phonenumber': '13691845359',
+              'realname': '陈锦峰',
+              'teachclasslist': [502152, 502153],
+              'username': 'chenjinfeng'}]}</msg>
+<msg timestamp="20210407 16:23:50.161" level="INFO">${ret} = {'retlist': [{'username': 'chenjinfeng', 'teachclasslist': [502152, 502153], 'realname': '陈锦峰', 'id': 153623, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '36078219930520...</msg>
+<status status="PASS" starttime="20210407 16:23:50.092" endtime="20210407 16:23:50.161"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.163" level="INFO">${retList} = [{'username': 'chenjinfeng', 'teachclasslist': [502152, 502153], 'realname': '陈锦峰', 'id': 153623, 'phonenumber': '13691845359', 'email': '354440717@qq.com', 'idcardnumber': '360782199305203518'}]</msg>
+<status status="PASS" starttime="20210407 16:23:50.163" endtime="20210407 16:23:50.163"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["username"]=="chenjinfeng"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.165" endtime="20210407 16:23:50.166"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["teachclasslist"]==[$class_8g_1c_id,$class_8g_2c_id]</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.167" endtime="20210407 16:23:50.168"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["realname"]=="陈锦峰"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.169" endtime="20210407 16:23:50.170"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["id"]==$retAdd["id"]</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.171" endtime="20210407 16:23:50.171"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["phonenumber"]=="13691845359"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.173" endtime="20210407 16:23:50.173"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["email"]=="354440717@qq.com"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.176" endtime="20210407 16:23:50.176"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["idcardnumber"]=="360782199305203518"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.177" endtime="20210407 16:23:50.178"></status>
+</kw>
+<kw name="Delete Teacher" library="pyLib.SchoolTeacherOperation" type="teardown">
+<arguments>
+<arg>${teacherId}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:50.297" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:50.179" endtime="20210407 16:23:50.297"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:49.984" endtime="20210407 16:23:50.299" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 16:23:49.969" endtime="20210407 16:23:50.305"></status>
+</suite>
+<status status="PASS" starttime="20210407 16:23:49.957" endtime="20210407 16:23:50.321"></status>
+</suite>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>deleteClass</arg>
+<arg>${class_8g_1c_id}</arg>
+<arg>AND</arg>
+<arg>deleteClass</arg>
+<arg>${class_8g_2c_id}</arg>
+</arguments>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${class_8g_1c_id}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:50.420" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:50.339" endtime="20210407 16:23:50.420"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${class_8g_2c_id}</arg>
+</arguments>
+<msg timestamp="20210407 16:23:50.516" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:50.420" endtime="20210407 16:23:50.516"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:50.338" endtime="20210407 16:23:50.516"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:44.344" endtime="20210407 16:23:50.516"></status>
+</suite>
+<suite id="s1-s1-s2" name="班级管理" source="E:\temp\Project0910\tc\空白数据\班级管理">
+<suite id="s1-s1-s2-s1" name="班级管理" source="E:\temp\Project0910\tc\空白数据\班级管理\班级管理.robot">
+<test id="s1-s1-s2-s1-t1" name="添加班级1:tc000001">
+<kw name="Add Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>${g_grade8_id}</arg>
+<arg>3班</arg>
+<arg>60</arg>
+</arguments>
+<assign>
+<var>${retAdd}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.630" level="INFO">{'id': 502159, 'invitecode': '5021591470380', 'retcode': 0}</msg>
+<msg timestamp="20210407 16:23:50.630" level="INFO">${retAdd} = {'invitecode': '5021591470380', 'retcode': 0, 'id': 502159}</msg>
+<status status="PASS" starttime="20210407 16:23:50.556" endtime="20210407 16:23:50.630"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retAdd['retcode']==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.632" endtime="20210407 16:23:50.633"></status>
+</kw>
+<kw name="List Classes" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.725" level="INFO">{'gradeid': 2,
+ 'retcode': 0,
+ 'retlist': [{'grade__name': '八年级',
+              'id': 502159,
+              'invitecode': '5021591470380',
+              'name': '3班',
+              'studentlimit': 60,
+              'studentnumber': 0,
+              'teacherlist': []}]}</msg>
+<msg timestamp="20210407 16:23:50.726" level="INFO">${ret} = {'gradeid': 2, 'retlist': [{'name': '3班', 'grade__name': '八年级', 'invitecode': '5021591470380', 'studentlimit': 60, 'studentnumber': 0, 'id': 502159, 'teacherlist': []}], 'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:50.634" endtime="20210407 16:23:50.726"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ret["retlist"]</arg>
+</arguments>
+<assign>
+<var>${retList}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.728" level="INFO">${retList} = [{'name': '3班', 'grade__name': '八年级', 'invitecode': '5021591470380', 'studentlimit': 60, 'studentnumber': 0, 'id': 502159, 'teacherlist': []}]</msg>
+<status status="PASS" starttime="20210407 16:23:50.727" endtime="20210407 16:23:50.728"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["id"]==$retAdd["id"]</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.730" endtime="20210407 16:23:50.731"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["invitecode"]==$retAdd["invitecode"]</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.733" endtime="20210407 16:23:50.734"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["name"]=="3班"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.735" endtime="20210407 16:23:50.736"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["grade__name"]=="八年级"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.737" endtime="20210407 16:23:50.737"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["studentlimit"]==60</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.738" endtime="20210407 16:23:50.739"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["studentnumber"]==0</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.743" endtime="20210407 16:23:50.745"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retList[0]["teacherlist"]==[]</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.747" endtime="20210407 16:23:50.748"></status>
+</kw>
+<kw name="Delete Class" library="pyLib.SchoolClassOperation" type="teardown">
+<arguments>
+<arg>&amp;{retAdd}[id]</arg>
+</arguments>
+<msg timestamp="20210407 16:23:50.750" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:50.829" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20210407 16:23:50.749" endtime="20210407 16:23:50.829"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:50.550" endtime="20210407 16:23:50.830" critical="yes"></status>
+</test>
+<test id="s1-s1-s2-s1-t2" name="修改班级3：tc000053">
+<kw name="Modify Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>88888888</arg>
+<arg>不存在的班级</arg>
+<arg>100</arg>
+</arguments>
+<assign>
+<var>${retModify}</var>
+</assign>
+<msg timestamp="20210407 16:23:50.926" level="INFO">{'reason': 'id 为`88888888`的班级不存在', 'retcode': 404}</msg>
+<msg timestamp="20210407 16:23:50.926" level="INFO">${retModify} = {'reason': 'id 为`88888888`的班级不存在', 'retcode': 404}</msg>
+<status status="PASS" starttime="20210407 16:23:50.842" endtime="20210407 16:23:50.926"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["retcode"]==404</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.928" endtime="20210407 16:23:50.929"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retModify["reason"]=="id 为`88888888`的班级不存在"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:50.930" endtime="20210407 16:23:50.930"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:50.839" endtime="20210407 16:23:50.932" critical="yes"></status>
+</test>
+<test id="s1-s1-s2-s1-t3" name="删除班级1：tc000081">
+<kw name="Delete Class" library="pyLib.SchoolClassOperation">
+<arguments>
+<arg>88888888</arg>
+</arguments>
+<assign>
+<var>${retDelete}</var>
+</assign>
+<msg timestamp="20210407 16:23:51.025" level="INFO">{'reason': 'id 为`88888888`的班级不存在', 'retcode': 404}</msg>
+<msg timestamp="20210407 16:23:51.025" level="INFO">${retDelete} = {'reason': 'id 为`88888888`的班级不存在', 'retcode': 404}</msg>
+<status status="PASS" starttime="20210407 16:23:50.942" endtime="20210407 16:23:51.025"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retDelete["retcode"]==404</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:51.026" endtime="20210407 16:23:51.027"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$retDelete["reason"]=="id 为`88888888`的班级不存在"</arg>
+</arguments>
+<status status="PASS" starttime="20210407 16:23:51.028" endtime="20210407 16:23:51.029"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:50.939" endtime="20210407 16:23:51.031" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 16:23:50.538" endtime="20210407 16:23:51.037"></status>
+</suite>
+<status status="PASS" starttime="20210407 16:23:50.528" endtime="20210407 16:23:51.050"></status>
+</suite>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>deleteAllTeachers</arg>
+<arg>AND</arg>
+<arg>deleteAllClasses</arg>
+</arguments>
+<kw name="Delete All Teachers" library="pyLib.SchoolTeacherOperation">
+<msg timestamp="20210407 16:23:51.248" level="INFO">{'retcode': 0, 'retlist': []}
+{'retcode': 0, 'retlist': []}
+{'retcode': 0, 'retlist': []}</msg>
+<status status="PASS" starttime="20210407 16:23:51.072" endtime="20210407 16:23:51.248"></status>
+</kw>
+<kw name="Delete All Classes" library="pyLib.SchoolClassOperation">
+<msg timestamp="20210407 16:23:51.443" level="INFO">{'gradeid': None, 'retcode': 0, 'retlist': []}
+{'gradeid': None, 'retcode': 0, 'retlist': []}
+{'gradeid': None, 'retcode': 0, 'retlist': []}</msg>
+<status status="PASS" starttime="20210407 16:23:51.248" endtime="20210407 16:23:51.443"></status>
+</kw>
+<status status="PASS" starttime="20210407 16:23:51.071" endtime="20210407 16:23:51.443"></status>
+</kw>
+<status status="FAIL" starttime="20210407 16:23:43.571" endtime="20210407 16:23:51.443"></status>
+</suite>
+<status status="FAIL" starttime="20210407 16:23:43.528" endtime="20210407 16:23:51.466"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="15" fail="3">Critical Tests</stat>
+<stat pass="15" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="15" fail="3" id="s1" name="Tc">Tc</stat>
+<stat pass="15" fail="3" id="s1-s1" name="空白数据">Tc.空白数据</stat>
+<stat pass="12" fail="3" id="s1-s1-s1" name="D 8年级1班和2班">Tc.空白数据.D 8年级1班和2班</stat>
+<stat pass="8" fail="1" id="s1-s1-s1-s1" name="D 庄子老师">Tc.空白数据.D 8年级1班和2班.D 庄子老师</stat>
+<stat pass="2" fail="0" id="s1-s1-s1-s1-s1" name="D 诸葛孔明老师">Tc.空白数据.D 8年级1班和2班.D 庄子老师.D 诸葛孔明老师</stat>
+<stat pass="2" fail="0" id="s1-s1-s1-s1-s1-s1" name="学生管理">Tc.空白数据.D 8年级1班和2班.D 庄子老师.D 诸葛孔明老师.学生管理</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1-s2" name="学生管理">Tc.空白数据.D 8年级1班和2班.D 庄子老师.学生管理</stat>
+<stat pass="5" fail="1" id="s1-s1-s1-s1-s3" name="老师管理">Tc.空白数据.D 8年级1班和2班.D 庄子老师.老师管理</stat>
+<stat pass="3" fail="2" id="s1-s1-s1-s2" name="班级管理">Tc.空白数据.D 8年级1班和2班.班级管理</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s3" name="老师管理">Tc.空白数据.D 8年级1班和2班.老师管理</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s3-s1" name="老师管理">Tc.空白数据.D 8年级1班和2班.老师管理.老师管理</stat>
+<stat pass="3" fail="0" id="s1-s1-s2" name="班级管理">Tc.空白数据.班级管理</stat>
+<stat pass="3" fail="0" id="s1-s1-s2-s1" name="班级管理">Tc.空白数据.班级管理.班级管理</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210407 16:23:45.126" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.140" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.464" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:45.987" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:46.006" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:46.348" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:47.194" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:47.276" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:47.390" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.111" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.465" level="WARN">Accessing variable items using '&amp;{ret}[retlist]' syntax is deprecated. Use '${ret}[retlist]' instead.</msg>
+<msg timestamp="20210407 16:23:48.476" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:48.483" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.492" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:48.683" level="WARN">Accessing variable items using '&amp;{retAdd}[retcode]' syntax is deprecated. Use '${retAdd}[retcode]' instead.</msg>
+<msg timestamp="20210407 16:23:48.698" level="WARN">Accessing variable items using '&amp;{retAdd}[reason]' syntax is deprecated. Use '${retAdd}[reason]' instead.</msg>
+<msg timestamp="20210407 16:23:49.015" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.019" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.026" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.411" level="WARN">Accessing variable items using '&amp;{retModify}[retcode]' syntax is deprecated. Use '${retModify}[retcode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.717" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.720" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:49.914" level="WARN">Accessing variable items using '&amp;{retAdd}[invitecode]' syntax is deprecated. Use '${retAdd}[invitecode]' instead.</msg>
+<msg timestamp="20210407 16:23:49.920" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+<msg timestamp="20210407 16:23:50.750" level="WARN">Accessing variable items using '&amp;{retAdd}[id]' syntax is deprecated. Use '${retAdd}[id]' instead.</msg>
+</errors>
+</robot>
